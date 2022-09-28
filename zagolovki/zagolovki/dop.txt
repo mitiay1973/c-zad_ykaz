@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <locale.h>
+int summ(int a, int b)
+{
+return a+b;
+}
+int razn(int a, int b)
+{
+return a-b;
+}
+int ymn(int a, int b)
+{
+return a*b;
+}
+int del(int a, int b)
+{
+return a/b;
+}
+int main(void)
+{
+setlocale(LC_ALL, "Rus");
+int r = 10;
+char* mas = calloc(r, sizeof(char));
+*(mas)="p";
+*(mas+1)="r";
+*(mas+2)="i";
+*(mas+3)="v";
+*(mas+4)="e";
+*(mas+5)="t";
+*(mas+6)="p";
+*(mas+7)="o";
+*(mas+8)="k";
+*(mas+9)="a";
+for(int i=0; i<r;i++)
+{
+printf_s("%p ",*(mas+i));
+}
+	printf_s("\n%d\n", summ(2, 2));
+	printf_s("%d\n", razn(2, 2));
+	printf_s("%d\n", ymn(2, 2));
+	printf_s("%d\n", del(2, 2));
+}
