@@ -4,12 +4,18 @@
 #include <locale.h>
 #define _CRT_SECURE_NO_WARNINGS
 #define N 10
-
+int (*f[4])();
 int main(void)
 {
+    setlocale(LC_ALL, "Rus");
     int exit = 1;
+    int r = 0;
+    int* mas = calloc(r, sizeof(int));
+    f[0] = redact();
+    f[1] = dinammass();
+    f[2] = Treyg_massiv();
+    f[3] = Vivod_funkcii(mas, r);
     while (exit == 1) {
-        setlocale(LC_ALL, "Rus");
         printf("Указатели\n");
         printf("Меню: \n1 - Редактирование и вывод\n2 - Динамическое создание и удаление \n3 - Произвольная длина массива\n4 - Треугольная матрица\n");
         int num;
@@ -18,29 +24,27 @@ int main(void)
         {
         case 1:
             printf("Вы выбрали <Редактирование и вывод>\n");
-            redact();
+            f[0];
             break;
         case 2:
             printf("Вы выбрали <Динамическое создание и удаление>\n");
-            dinammass();
+            f[1];
             break;
         case 3:
-            printf("Вы выбрали <Произвольная длина массива>\n");
-            int r=0;
+            printf("Вы выбрали <Произвольная длина массива>\n");          
             scanf_s("%d", &r);
-            int *mas = calloc(r, sizeof(int));
             for (int i = 0; i < r; i++)
             {
                 *(mas + i) = i;
                 
             }
             printf("\n");
-            Vivod_funkcii(mas,r);
+            f[4];
 
             break;
         case 4:
             printf("Вы выбрали <Треугольная матрица>\n");
-            Treyg_massiv();
+            f[3];
             break;
         default:
             printf("Такой команды нет");
@@ -67,6 +71,7 @@ redact()
             scanf_s("%d", &pere);
             printf("Число в ячейке ");
             printf(" %d ", *p);
+            
         }
     
 }
